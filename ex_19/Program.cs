@@ -5,18 +5,22 @@
 
 Console.Write("Input five-digit number: ");
 string number = Console.ReadLine()!;
-char[] array = number.ToCharArray(0, number.Length);
-Console.Write(array);
+Console.Write(number);
 
-// Цикл работает с числом из любого кол-ва цифр и любой строкой!
-for (int i = 0; i < number.Length / 2; i++)
+void Polindrom(string number)
 {
-    if (array[i] != array[number.Length - 1 - i])
+// === Цикл работает с числом из любого кол-ва цифр и любой строкой ===
+    for (int i = 0; i < number.Length / 2; i++)
     {
-        Console.Write(" -> NO");
-        break;
+        if (number[i] != number[number.Length - 1 - i])
+        {
+            Console.Write(" -> NO");
+            break;
+        }
+        else if (number.Length - 1 - i - i <= 2)
+            Console.Write(" -> YES");
+        else continue;
     }
-    else if (number.Length - 1 - i - i <= 2)
-        Console.Write(" -> YES");
-    else continue;
 }
+
+Polindrom(number);
