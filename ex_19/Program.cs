@@ -10,17 +10,20 @@ Console.Write(number);
 void Polindrom(string number)
 {
 // === Цикл работает с числом из любого кол-ва цифр и любой строкой ===
+    bool check = true;
     for (int i = 0; i < number.Length / 2; i++)
     {
-        if (number[i] != number[number.Length - 1 - i])
-        {
-            Console.Write(" -> NO");
-            break;
-        }
-        else if (number.Length - 1 - i - i <= 2)
-            Console.Write(" -> YES");
-        else continue;
+        check = check & number[i] == number[number.Length - i - 1];
+        // if (number[i] != number[number.Length - 1 - i])
+        // {
+        //     Console.Write(" -> NO");
+        //     break;
+        // }
+        // else if (number.Length - 1 - i - i <= 2)
+        //     Console.Write(" -> YES");
     }
+    string txt = check == true? " -> YES" : " -> NO"; 
+    Console.WriteLine(txt);
 }
 
 Polindrom(number);
