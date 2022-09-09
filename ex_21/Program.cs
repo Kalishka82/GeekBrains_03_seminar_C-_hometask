@@ -38,3 +38,21 @@ Console.WriteLine($"Расстояние между двумя точками р
 // в обоих случаях получаются одинаковые переменные X Y Z, но для
 // вычисления дальше нужны X1 Y1 Z1 и X2 Y2 Z2, можно ли их как-то
 // внутри этого метода завязать на i: Xi Yi Zi?
+
+// Отвечаю на Ваш вопрос. Конечно, можно. Но всё зависит от того, как именно Вы хотите это реализовать. Вот такой вариант, например:
+
+// / double[,] FillCoordinates(int numberCoor)
+// {
+// int point = 2;
+// double[,] coordinates = new double[numberCoor, point];
+// for (int k = 0; k < numberCoor; k++)
+// {
+//     for (int m = 0; m < point; m++)
+//     {
+//         Console.Write($"Input coordinate {k + 1} of point {m + 1}: ");
+//         coordinates[k, m] = double.Parse(Console.ReadLine());
+//     }
+// }
+// return coordinates;
+// }
+// И вот у Вас массив, в котором столбцы соответствуют точкам, а строки координатам.
